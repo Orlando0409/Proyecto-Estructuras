@@ -1,0 +1,34 @@
+#pragma once
+#include <iostream>
+#include <string>
+using namespace std;
+
+typedef class Cajero {
+	private:
+		int id;
+		int numeroCaja;
+		string nombreCajero;
+	public:
+
+		Cajero();
+		~Cajero(); // destructor
+
+		//metodos get/set de los atributos
+		int getId() const { return id; }
+		int getNumeroCaja() const { return numeroCaja; }
+		string getNombreCajero() const { return nombreCajero; }
+		void setId(int _id) { this->id = _id; }
+		void setNumeroCaja(int _numeroCaja) { this->numeroCaja = _numeroCaja; }
+		void setNombreCajero(string _nombreCajero) { this->nombreCajero = _nombreCajero; }
+
+		class Cajero* siguiente;
+		class Cajero* atras;
+		class Cliente* inicio;
+
+		// Métodos para administrar los cajeros
+		void ingresarCajero();
+		void mostrarCajeros();
+		void eliminarCajero();
+		void modificarCajero();
+	
+}nodoCajero;
