@@ -1,5 +1,10 @@
 # ===== Sistema Operativo =====
 # Windows
+.wsuo
+.opendb
+.db
+.vsidx
+.vs
 .exe
 .dll
 .com
