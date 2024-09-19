@@ -1,5 +1,6 @@
 #pragma once
 #include "Cajero.h"
+#include <iomanip>
 
 Cajero::Cajero(){}
 
@@ -82,9 +83,14 @@ void Cajero::mostrarCajeros() {
 		cout << "No hay cajeros ingresados." << endl;
 	}
 	else {
-		cout << "ID Cajero | Numero Caja | Nombre Cajero" << endl;
+		cout << left << setw(10) << "ID Cajero"
+			<< " | " << setw(12) << "Numero Caja"
+			<< " | " << setw(20) << "Nombre Cajero" << endl;
+		cout << "--------------------------------------------" << endl;
 		while (actual != NULL) {
-			cout << actual->getId() << "      | " << actual->getNumeroCaja() << "      | " << actual->getNombreCajero() << endl;
+			cout << left << setw(10) << actual->getId()
+				<< " | " << setw(12) << actual->getNumeroCaja() 
+				<< " | " << setw(20) << actual->getNombreCajero() << endl;
 			actual = actual->siguiente;
 		}
 	}
@@ -99,24 +105,29 @@ void Cajero::modificarCajero()
 	if (validarID(id) == NULL) //igual a null porque si lo encuentra en la funcion va a mandar un false
 	{
 		nodoCajero* actual = listaCajero;
+		while (actual != NULL) {
+			if (actual->getId() == id) {
 
-		int numCajero;
-		string nombre;
-		cout << "Ingrese nuevo numero de caja: ";
-		cin >> numCajero;
-		cout << "Ingrese nuevo nombre del cajero: ";
-		cin.ignore();
-		getline(cin, nombre);
+				int numCajero;
+				string nombre;
+				cout << "Ingrese nuevo numero de caja: ";
+				cin >> numCajero;
+				cout << "Ingrese nuevo nombre del cajero: ";
+				cin.ignore();
+				getline(cin, nombre);
 
-		if (!validarCaja(numCajero)) {
-			cout << "El numero de caja ya se encuentra en uso." << endl;
-			return;
+				if (!validarCaja(numCajero)) {
+					cout << "El numero de caja ya se encuentra en uso." << endl;
+					return;
+				}
+
+				actual->setNumeroCaja(numCajero);
+				actual->setNombreCajero(nombre);
+				cout << "Cajero modificado correctamente." << endl;
+			}
+			actual = actual->siguiente;
 		}
 
-		actual->setNumeroCaja(numCajero);
-		actual->setNombreCajero(nombre);
-		cout << "Cajero modificado correctamente." << endl;
-		
 	}
 	else {
 		cout << "Cajero no encontrado." << endl;
