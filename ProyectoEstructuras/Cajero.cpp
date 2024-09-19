@@ -91,7 +91,8 @@ void Cajero::mostrarCajeros() {
 	}
 }
 
-void Cajero::modificarCajero() {
+void Cajero::modificarCajero()  //no funciona (no se por qué)
+{
 	int id;
 	cout << "Ingrese ID del cajero que desea modificar: ";
 	cin >> id;
@@ -145,4 +146,47 @@ void Cajero::eliminarCajero() {
 		actual = actual->siguiente;
 	}
 	cout << "Cajero no encontrado." << endl;
+}
+
+void Cajero::menuCajero()
+{
+	int opt;
+	do
+	{
+		system("cls");
+		cout << "MODULO_CAJEROS" << endl;
+		cout << "1. Ingresar cajero" << endl;
+		cout << "2. Mostrar lista de cajeros" << endl;
+		cout << "3. modificar cajero" << endl;
+		cout << "4. Eliminar cajero" << endl;
+		cout << "5. Salir" << endl;
+		cout << "Ingrese una opcion: ";
+		cin >> opt;
+		switch (opt) {
+		case 1:
+			ingresarCajero();
+			system("pause");
+			break;
+		case 2:
+			mostrarCajeros();
+			system("pause");
+			break;
+		case 3:
+			modificarCajero();
+			system("pause");
+			break;
+		case 4:
+			eliminarCajero();
+			system("pause");
+			break;
+		case 5:
+			cout << "Gracias por usar nuestro modulo de cajeros!" << endl;
+			system("pause");
+			break;
+		default:
+			cout << "Opcion invalida" << endl;
+			system("pause");
+		}
+
+	} while (opt != 5);
 }

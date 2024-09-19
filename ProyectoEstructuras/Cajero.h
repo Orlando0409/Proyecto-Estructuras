@@ -1,7 +1,5 @@
 #pragma once
-#include <iostream>
-#include <string>
-using namespace std;
+#include "Librerias.h"
 
 typedef class Cajero {
 	private:
@@ -30,5 +28,6 @@ typedef class Cajero {
 		void mostrarCajeros();
 		void eliminarCajero();
 		void modificarCajero();
+		void menuCajero();
 	
 }nodoCajero;
