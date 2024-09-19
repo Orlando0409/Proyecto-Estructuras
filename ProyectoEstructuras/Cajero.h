@@ -16,10 +16,6 @@ typedef class Cajero {
 		int getNumeroCaja() const { return numeroCaja; }
 		string getNombreCajero() const { return nombreCajero; }
 
-		void get() {
-
-		}
-
 		void setId(int _id) { 
 			this->id = _id; 
 		}
