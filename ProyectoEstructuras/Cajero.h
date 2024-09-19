@@ -15,9 +15,18 @@ typedef class Cajero {
 		int getId() const { return id; }
 		int getNumeroCaja() const { return numeroCaja; }
 		string getNombreCajero() const { return nombreCajero; }
-		void setId(int _id) { this->id = _id; }
-		void setNumeroCaja(int _numeroCaja) { this->numeroCaja = _numeroCaja; }
-		void setNombreCajero(string _nombreCajero) { this->nombreCajero = _nombreCajero; }
+
+		void setId(int _id) { 
+			this->id = _id; 
+		}
+		
+		void setNumeroCaja(int _numeroCaja) { 
+			this->numeroCaja = _numeroCaja; 
+		}
+		
+		void setNombreCajero(string _nombreCajero) { 
+			this->nombreCajero = _nombreCajero; 
+		}
 
 		class Cajero* siguiente;
 		class Cajero* atras;

@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AC6BDA6D-A52A-44DD-9515-684A76C807F2}|ProyectoEstructuras.vcxproj|C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Cajero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AC6BDA6D-A52A-44DD-9515-684A76C807F2}|ProyectoEstructuras.vcxproj|solutionrelative:Cajero.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC6BDA6D-A52A-44DD-9515-684A76C807F2}|ProyectoEstructuras.vcxproj|C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Cajero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AC6BDA6D-A52A-44DD-9515-684A76C807F2}|ProyectoEstructuras.vcxproj|solutionrelative:Cajero.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC6BDA6D-A52A-44DD-9515-684A76C807F2}|ProyectoEstructuras.vcxproj|C:\\USERS\\OBALT\\SOURCE\\REPOS\\PROYECTO-ESTRUCTURAS\\PROYECTOESTRUCTURAS\\LIBRERIAS.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AC6BDA6D-A52A-44DD-9515-684A76C807F2}|ProyectoEstructuras.vcxproj|solutionrelative:LIBRERIAS.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC6BDA6D-A52A-44DD-9515-684A76C807F2}|ProyectoEstructuras.vcxproj|C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AC6BDA6D-A52A-44DD-9515-684A76C807F2}|ProyectoEstructuras.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,6 +55,58 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{c93a910a-0fa6-4307-93a4-f2bd61ec7828}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Main.cpp",
+              "RelativeDocumentMoniker": "Main.cpp",
+              "ToolTip": "C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Main.cpp",
+              "RelativeToolTip": "Main.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-19T19:16:34.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Librerias.h",
+              "DocumentMoniker": "C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Librerias.h",
+              "RelativeDocumentMoniker": "Librerias.h",
+              "ToolTip": "C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Librerias.h",
+              "RelativeToolTip": "Librerias.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-19T19:16:24.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cajero.h",
+              "DocumentMoniker": "C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Cajero.h",
+              "RelativeDocumentMoniker": "Cajero.h",
+              "ToolTip": "C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Cajero.h",
+              "RelativeToolTip": "Cajero.h",
+              "ViewState": "AQIAABAAAAAAAAAAAAA5wCAAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-09-19T19:15:39.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cajero.cpp",
+              "DocumentMoniker": "C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Cajero.cpp",
+              "RelativeDocumentMoniker": "Cajero.cpp",
+              "ToolTip": "C:\\Users\\obalt\\source\\repos\\Proyecto-Estructuras\\ProyectoEstructuras\\Cajero.cpp",
+              "RelativeToolTip": "Cajero.cpp",
+              "ViewState": "AQIAADEAAAAAAAAAAAAkwAQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-19T19:08:15.678Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -1,11 +1,11 @@
 #pragma once
 #include "Cajero.h"
+#include <iomanip>
 
 Cajero::Cajero(){}
 
 Cajero::~Cajero(){}
 nodoCajero* listaCajero = NULL;
-
 
 bool validarCaja(int numCajero) {
     nodoCajero* actual = listaCajero;
@@ -83,39 +83,50 @@ void Cajero::mostrarCajeros() {
 		cout << "No hay cajeros ingresados." << endl;
 	}
 	else {
-		cout << "ID Cajero | Numero Caja | Nombre Cajero" << endl;
+		cout << left << setw(10) << "ID Cajero"
+			<< " | " << setw(12) << "Numero Caja"
+			<< " | " << setw(20) << "Nombre Cajero" << endl;
+		cout << "--------------------------------------------" << endl;
 		while (actual != NULL) {
-			cout << actual->getId() << "      | " << actual->getNumeroCaja() << "      | " << actual->getNombreCajero() << endl;
+			cout << left << setw(10) << actual->getId()
+				<< " | " << setw(12) << actual->getNumeroCaja() 
+				<< " | " << setw(20) << actual->getNombreCajero() << endl;
 			actual = actual->siguiente;
 		}
 	}
 }
 
-void Cajero::modificarCajero()  //no funciona (no se por qué)
+void Cajero::modificarCajero()
 {
 	int id;
 	cout << "Ingrese ID del cajero que desea modificar: ";
 	cin >> id;
-	nodoCajero* cajeroAModificar = NULL;
 
 	if (validarID(id) == NULL) //igual a null porque si lo encuentra en la funcion va a mandar un false
 	{
-		int numCajero;
-		string nombre;
-		cout << "Ingrese nuevo numero de caja: ";
-		cin >> numCajero;
-		cout << "Ingrese nuevo nombre del cajero: ";
-		cin.ignore();
-		getline(cin, nombre);
+		nodoCajero* actual = listaCajero;
+		while (actual != NULL) {
+			if (actual->getId() == id) {
 
-		if (!validarCaja(numCajero)) {
-			cout << "El numero de caja ya se encuentra en uso." << endl;
-			return;
+				int numCajero;
+				string nombre;
+				cout << "Ingrese nuevo numero de caja: ";
+				cin >> numCajero;
+				cout << "Ingrese nuevo nombre del cajero: ";
+				cin.ignore();
+				getline(cin, nombre);
+
+				if (!validarCaja(numCajero)) {
+					cout << "El numero de caja ya se encuentra en uso." << endl;
+					return;
+				}
+
+				actual->setNumeroCaja(numCajero);
+				actual->setNombreCajero(nombre);
+				cout << "Cajero modificado correctamente." << endl;
+			}
+			actual = actual->siguiente;
 		}
-
-		cajeroAModificar->setNumeroCaja(numCajero);
-		cajeroAModificar->setNombreCajero(nombre);
-		cout << "Cajero modificado correctamente." << endl;
 
 	}
 	else {
@@ -154,28 +165,41 @@ void Cajero::menuCajero()
 	do
 	{
 		system("cls");
-		cout << "MODULO_CAJEROS" << endl;
-		cout << "1. Ingresar cajero" << endl;
-		cout << "2. Mostrar lista de cajeros" << endl;
-		cout << "3. modificar cajero" << endl;
-		cout << "4. Eliminar cajero" << endl;
-		cout << "5. Salir" << endl;
+		cout << "\tMODULO de CAJEROS" << endl;
+		cout << "--------------------------------------\n";
+		cout << "1. Ingresar cajero." << endl;
+		cout << "2. Mostrar lista de cajeros. " << endl;
+		cout << "3. Modificar cajero." << endl;
+		cout << "4. Eliminar cajero." << endl;
+		cout << "5. Salir. \n" << endl;
 		cout << "Ingrese una opcion: ";
 		cin >> opt;
 		switch (opt) {
 		case 1:
+			system("cls");
+			cout << "\tIngresar un cajero nuevo.\n";
+			cout << "------------------------------------\n\n";
 			ingresarCajero();
 			system("pause");
 			break;
 		case 2:
+			system("cls");
+			cout << "\tLista de cajeros activos.\n";
+			cout << "------------------------------------\n\n";
 			mostrarCajeros();
 			system("pause");
 			break;
 		case 3:
+			system("cls");
+			cout << "\tEditar un cajero.\n";
+			cout << "------------------------------------\n\n";
 			modificarCajero();
 			system("pause");
 			break;
 		case 4:
+			system("cls");
+			cout << "\tDespedir a un cajero. \n";
+			cout << "------------------------------------\n\n";
 			eliminarCajero();
 			system("pause");
 			break;
