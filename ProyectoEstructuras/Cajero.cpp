@@ -6,7 +6,6 @@ Cajero::Cajero(){}
 Cajero::~Cajero(){}
 nodoCajero* listaCajero = NULL;
 
-
 bool validarCaja(int numCajero) {
     nodoCajero* actual = listaCajero;
     while (actual != NULL) {
@@ -91,15 +90,16 @@ void Cajero::mostrarCajeros() {
 	}
 }
 
-void Cajero::modificarCajero()  //no funciona (no se por qué)
+void Cajero::modificarCajero()
 {
 	int id;
 	cout << "Ingrese ID del cajero que desea modificar: ";
 	cin >> id;
-	nodoCajero* cajeroAModificar = NULL;
 
 	if (validarID(id) == NULL) //igual a null porque si lo encuentra en la funcion va a mandar un false
 	{
+		nodoCajero* actual = listaCajero;
+
 		int numCajero;
 		string nombre;
 		cout << "Ingrese nuevo numero de caja: ";
@@ -113,10 +113,10 @@ void Cajero::modificarCajero()  //no funciona (no se por qué)
 			return;
 		}
 
-		cajeroAModificar->setNumeroCaja(numCajero);
-		cajeroAModificar->setNombreCajero(nombre);
+		actual->setNumeroCaja(numCajero);
+		actual->setNombreCajero(nombre);
 		cout << "Cajero modificado correctamente." << endl;
-
+		
 	}
 	else {
 		cout << "Cajero no encontrado." << endl;
@@ -154,28 +154,41 @@ void Cajero::menuCajero()
 	do
 	{
 		system("cls");
-		cout << "MODULO_CAJEROS" << endl;
-		cout << "1. Ingresar cajero" << endl;
-		cout << "2. Mostrar lista de cajeros" << endl;
-		cout << "3. modificar cajero" << endl;
-		cout << "4. Eliminar cajero" << endl;
-		cout << "5. Salir" << endl;
+		cout << "\tMODULO de CAJEROS" << endl;
+		cout << "--------------------------------------\n";
+		cout << "1. Ingresar cajero." << endl;
+		cout << "2. Mostrar lista de cajeros. " << endl;
+		cout << "3. Modificar cajero." << endl;
+		cout << "4. Eliminar cajero." << endl;
+		cout << "5. Salir. \n" << endl;
 		cout << "Ingrese una opcion: ";
 		cin >> opt;
 		switch (opt) {
 		case 1:
+			system("cls");
+			cout << "\tIngresar un cajero nuevo.\n";
+			cout << "------------------------------------\n\n";
 			ingresarCajero();
 			system("pause");
 			break;
 		case 2:
+			system("cls");
+			cout << "\tLista de cajeros activos.\n";
+			cout << "------------------------------------\n\n";
 			mostrarCajeros();
 			system("pause");
 			break;
 		case 3:
+			system("cls");
+			cout << "\tEditar un cajero.\n";
+			cout << "------------------------------------\n\n";
 			modificarCajero();
 			system("pause");
 			break;
 		case 4:
+			system("cls");
+			cout << "\tDespedir a un cajero. \n";
+			cout << "------------------------------------\n\n";
 			eliminarCajero();
 			system("pause");
 			break;

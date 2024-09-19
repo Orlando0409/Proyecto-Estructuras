@@ -6,10 +6,14 @@ int main() {
 	do
 	{
 		system("cls");
-		cout << "1. Modulo de Cajeros\n";
-		cout << "2. Modulo de Clientes\n";
-		cout << "3. Salir\n";
-
+		cout << "\t\tBienvenido a \n";
+		cout << "\tBanco Quiebra Segura R.L. \n";
+		cout << "--------------------------------------------\n";
+		cout << "       1. Modulo de Cajeros\n";
+		cout << "       2. Modulo de Clientes\n";
+		cout << "       3. Salir\n\n";
+		cout << "Ingrese una opcion: ";
+		cin >> opc;
 		switch (opc)
 		{
 			case 1:
