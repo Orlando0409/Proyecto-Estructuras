@@ -160,32 +160,41 @@ static void mostrarCajeros() {
 
 void Cliente::atenderClientes() {
 	nodoCajero* actual = listaCajero;
+	bool clientesEncontrados = false;
 
+	if (actual == NULL) {
+		cout << "No hay cajeros ingresados" << endl;
+		return;
+	}
 	while (actual != NULL) {
-		if(actual->inicio != NULL){
+		if (actual->inicio != NULL) {
 			actual->inicio = actual->inicio->siguiente;
+			clientesEncontrados = true;
 		}
 		actual = actual->siguiente;
 	}
-	cout << "Los clientes al inicio de la cola han sido atendidos. " << endl;
+	if (!clientesEncontrados) {
+		cout << "No hay clientes en los cajeros" << endl;
+	}
+	else {
+		cout << "Primeros clientes atendidos" << endl;
+	}
 }
 
 void Cliente::eliminarCliente() {
 	int ticket = 0;
 	nodoCajero* actual = listaCajero;
-	
-	cout << "Digite el ticket del cliente que desea eliminar: ";
+	bool ticketeEncontrado = false;
+
+	cout << "Digite el ticket del cliente que desea eliminar" << endl;
 	cin >> ticket;
 
 	if (actual == NULL) {
-		cout << "No hay cajeros disponibles. " << endl;
+		cout << "No hay cajeros disponibles" << endl;
 	}
 	while (actual != NULL) {
 		nodoCliente* clienteActual = actual->inicio;
 		nodoCliente* aux = NULL;
-		if (clienteActual == NULL) {
-			cout << "El ticket no existe en el sistema. " << endl;
-		}
 		while (clienteActual != NULL && clienteActual->getFicha() != ticket) {
 			aux = clienteActual;
 			clienteActual = clienteActual->siguiente;
@@ -193,20 +202,23 @@ void Cliente::eliminarCliente() {
 		if (clienteActual != NULL && aux != NULL && clienteActual->getFicha() == ticket) {
 			aux->siguiente = clienteActual->siguiente;
 			delete clienteActual;
-			cout << "Cliente eliminado. " << endl;
+			cout << "Cliente eliminado" << endl;
+			ticketeEncontrado = true;
 			return;
 		}
 		if (aux == NULL && clienteActual != NULL) {
 			actual->inicio = clienteActual->siguiente;
 			delete clienteActual;
-			cout << "Cliente eliminado. " << endl;
+			cout << "Cliente eliminado" << endl;
+			ticketeEncontrado = true;
 			return;
 		}
 		actual = actual->siguiente;
 	}
-	if (actual == NULL) {
-		cout << "El ticket no existe en el sistema. " << endl;
+	if (!ticketeEncontrado) {
+		cout << "El tickete no existe" << endl;
 	}
+
 }
 
 void Cliente::menuClientes() {
@@ -274,4 +286,4 @@ void Cliente::menuClientes() {
 		}
 
 	} while (opcion != 5);
-};
+}
