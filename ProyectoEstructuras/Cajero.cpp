@@ -165,7 +165,7 @@ void Cajero::menuCajero()
 	do
 	{
 		system("cls");
-		cout << "\tMODULO de CAJEROS" << endl;
+		cout << "\tMÓDULO de CAJEROS" << endl;
 		cout << "--------------------------------------\n";
 		cout << "1. Ingresar cajero." << endl;
 		cout << "2. Mostrar lista de cajeros. " << endl;
@@ -198,7 +198,7 @@ void Cajero::menuCajero()
 			break;
 		case 4:
 			system("cls");
-			cout << "\tDespedir a un cajero. \n";
+			cout << "\tEliminar a un cajero. \n";
 			cout << "------------------------------------\n\n";
 			eliminarCajero();
 			system("pause");
