@@ -12,7 +12,6 @@ typedef class Cajero {
 		~Cajero(); // destructor
 
 		//metodos get/set de los atributos
-		int cantidadCliente = 0;
 		int getId() const { return id; }
 		int getNumeroCaja() const { return numeroCaja; }
 		string getNombreCajero() const { return nombreCajero; }
