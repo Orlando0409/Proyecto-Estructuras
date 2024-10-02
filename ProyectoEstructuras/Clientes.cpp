@@ -121,31 +121,34 @@ static void mostrarCajeros() {
 		cout << "No hay cajeros ingresados." << endl;
 	}
 	else {
-		cout << left << setw(10) << "ID Cajero"
-			<< " | " << setw(12) << "Numero Caja"
-			<< " | " << setw(20) << "Nombre Cajero" << endl;
-		cout << "--------------------------------------------" << endl;
 
 		while (actual != NULL) {
-			
-			cout << left << setw(10) << actual->getId()
-				<< " | " << setw(12) << actual->getNumeroCaja()
-				<< " | " << setw(20) << actual->getNombreCajero() << endl;
+			cout << "\n\n\n" << "|-------------------------------------------|" << endl;
+			cout << left << "|ID Cajero"
+				<< " | " << setw(12) << "Numero Caja"
+				<< " | " << setw(16) << "Nombre Cajero"<<"|" << endl;
+			cout << "|-------------------------------------------|" << endl;
 
+			cout << left <<"|"<< actual->getId()
+				<< " | " << setw(12) << actual->getNumeroCaja()
+				<< " | " << setw(16) << actual->getNombreCajero() <<"|" << endl;
+			cout << "|-------------------------------------------|" << endl;
 		
 			nodoCliente* clienteActual = actual->inicio;
 			if (clienteActual == NULL) {
-				cout << "   No hay clientes asignados a este cajero." << endl;
+				cout << "No hay clientes asignados a este cajero." << endl;
 			}
 			else {
-				cout << "   Clientes asignados:" << endl;
-				cout << "   " << left << setw(12) << "Ficha Cliente"
-					<< " | " << setw(12) << "Tipo Cliente" << endl;
-				cout << "   --------------------------------------------" << endl;
+				cout << "\n|"<< setw(42)<<"Clientes asignados : " <<" | " << endl;
+				cout << "|-------------------------------------------|" << endl;
+				cout << "|" << left << setw(20) << "Ficha Cliente"
+					<< " | " << setw(20) << "Tipo Cliente" <<"|" << endl;
+				cout << "|-------------------------------------------|" << endl;
 
 				while (clienteActual != NULL) {
-					cout << "   " << left << setw(12) << clienteActual->getFicha()
-						<< " | " << setw(12) << clienteActual->getTipo() << endl;
+					cout << "|" << left << setw(20) << clienteActual->getFicha()
+						<< " | " << setw(20) << clienteActual->getTipo() << "|" << endl;
+					cout << "|-------------------------------------------|" << endl;
 
 					clienteActual = clienteActual->siguiente;
 				}
@@ -234,6 +237,7 @@ void Cliente::menuClientes() {
 		case 2:
 			system("cls");
 			mostrarCajeros();
+			cout << "\n\n"; 
 			system("pause");
 			break;
 		case 3:
@@ -249,6 +253,10 @@ void Cliente::menuClientes() {
 		case 5:
 			system("cls");
 			cout << "bye" << endl;
+			system("pause");
+			break;
+		default:
+			cout << "Opcion invalida" << endl;
 			system("pause");
 			break;
 		}
