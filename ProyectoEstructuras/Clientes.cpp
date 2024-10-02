@@ -1,8 +1,7 @@
 #include "Clientes.h"
 #include "Cajero.h"
-#include <iomanip>
-#include <cstdlib> 
-#include <ctime>   
+#include "Librerias.h"
+ 
 
 
 Cliente::Cliente(){}
@@ -165,6 +164,9 @@ void Cliente::eliminarCliente() {
 
 };
 void Cliente::menuClientes() {
+
+
+	setlocale(LC_CTYPE, "Spanish");
 
 	int opcion;
 	

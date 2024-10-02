@@ -161,6 +161,8 @@ void Cajero::eliminarCajero() {
 
 void Cajero::menuCajero()
 {
+	setlocale(LC_CTYPE, "Spanish");
+
 	int opt;
 	do
 	{
