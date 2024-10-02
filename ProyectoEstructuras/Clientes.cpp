@@ -160,14 +160,25 @@ static void mostrarCajeros() {
 
 void Cliente::atenderClientes() {
 	nodoCajero* actual = listaCajero;
+	bool clientesEncontrados = false;
 
+	if (actual == NULL) {
+		cout << "No hay cajeros ingresados" << endl;
+		return;
+	}
 	while (actual != NULL) {
 		if(actual->inicio != NULL){
 			actual->inicio = actual->inicio->siguiente;
+			clientesEncontrados = true;
 		}
 		actual = actual->siguiente;
 	}
-	cout << "Primeros clientes atendidos" << endl;
+	if (!clientesEncontrados) {
+		cout << "No hay clientes en los cajeros" << endl;
+	}
+	else {
+		cout << "Primeros clientes atendidos" << endl;
+	}
 };
 void Cliente::eliminarCliente() {
 	int ticket = 0;
@@ -185,6 +196,7 @@ void Cliente::eliminarCliente() {
 		nodoCliente* aux = NULL;
 		if (clienteActual == NULL) {
 			cout << "El tickete no existe" << endl;
+			return;
 		}
 		while (clienteActual != NULL && clienteActual->getFicha() != ticket) {
 			aux = clienteActual;
@@ -204,9 +216,7 @@ void Cliente::eliminarCliente() {
 		}
 		actual = actual->siguiente;
 	}
-	if (actual == NULL) {
-		cout << "El tickete no existe" << endl;
-	}
+	
 };
 void Cliente::menuClientes() {
 
