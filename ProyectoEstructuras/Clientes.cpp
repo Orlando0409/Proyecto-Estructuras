@@ -158,10 +158,54 @@ static void mostrarCajeros() {
 }
 
 void Cliente::atenderClientes() {
-	
+	nodoCajero* actual = listaCajero;
+
+	while (actual != NULL) {
+		if(actual->inicio != NULL){
+			actual->inicio = actual->inicio->siguiente;
+		}
+		actual = actual->siguiente;
+	}
+	cout << "Primeros clientes atendidos" << endl;
 };
 void Cliente::eliminarCliente() {
+	int ticket = 0;
+	nodoCajero* actual = listaCajero;
+	
 
+	cout << "Digite el ticket del cliente que desea eliminar" << endl;
+	cin >> ticket;
+
+	if (actual == NULL) {
+		cout << "No hay cajeros disponibles" << endl;
+	}
+	while (actual != NULL) {
+		nodoCliente* clienteActual = actual->inicio;
+		nodoCliente* aux = NULL;
+		if (clienteActual == NULL) {
+			cout << "El tickete no existe" << endl;
+		}
+		while (clienteActual != NULL && clienteActual->getFicha() != ticket) {
+			aux = clienteActual;
+			clienteActual = clienteActual->siguiente;
+		}
+		if (clienteActual != NULL && aux != NULL && clienteActual->getFicha() == ticket) {
+			aux->siguiente = clienteActual->siguiente;
+			delete clienteActual;
+			cout << "Cliente eliminado" << endl;
+			return;
+		}
+		if (aux == NULL && clienteActual != NULL) {
+			actual->inicio = clienteActual->siguiente;
+			delete clienteActual;
+			cout << "Cliente eliminado" << endl;
+			return;
+		}
+		actual = actual->siguiente;
+	}
+	if (actual == NULL) {
+		cout << "El tickete no existe" << endl;
+	}
 };
 void Cliente::menuClientes() {
 
@@ -199,7 +243,7 @@ void Cliente::menuClientes() {
 			break;
 		case 4:
 			system("cls");
-			cout << "bye" << endl;
+			eliminarCliente();
 			system("pause");
 			break;
 		case 5:
