@@ -1,7 +1,9 @@
 
 #include "Cajero.h"
+#include "Clientes.h"
 int main() {
 	nodoCajero n;
+	nodoCliente m;
 	int opc;
 	do
 	{
@@ -23,6 +25,7 @@ int main() {
 			}
 			case 2:
 			{
+				m.menuClientes();
 				break;
 			}
 			case 3:
